@@ -21,9 +21,9 @@ const Login = () => {
 
     if (data.success) {
       navigate('/');
-      setUser(data.user);
       setShowUserLogin(false);
-      // Fetch products after successful login/registration
+      // Fetch complete user data and products after successful login/registration
+      await fetchUser();
       fetchProducts();
     } else {
       toast.error(data.message);

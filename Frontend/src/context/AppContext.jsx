@@ -40,9 +40,11 @@ const {data}=await axios.get('/api/user/is-auth');
 if(data.success){
   setUser(data.user);
   setCartItems(data.user.cartItem || {})
+  console.log('User authenticated:', data.user);
 }
       }
       catch(error){
+        console.log('Authentication failed:', error.message);
         setUser(null)
         setCartItems({})
       }
