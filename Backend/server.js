@@ -18,7 +18,7 @@ dotenv.config();
 //allow multiple origins
 const allowedOrigins = process.env.NODE_ENV === 'production' 
   ? [process.env.FRONTEND_URL] 
-  : ["http://localhost:5173", "http://localhost:5174"];
+  : ["https://green-cart-frontend-94nl.onrender.com"];
 app.post('/stripe',express.raw({type:'application/json'}),stripeWebhooks)
 
 // Middleware
