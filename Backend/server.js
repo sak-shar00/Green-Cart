@@ -17,8 +17,13 @@ const { stripeWebhooks } = require("./controllers/orderController");
 dotenv.config();
 //allow multiple origins
 const allowedOrigins = process.env.NODE_ENV === 'production' 
-  ? [process.env.FRONTEND_URL] 
-  : ["https://green-cart-frontend-94nl.onrender.com"];
+  ? [process.env.FRONTEND_URL || "https://green-cart-frontend-94nl.onrender.com"] 
+  : ["http://localhost:5173", "http://localhost:5174"];
+
+console.log('Environment:', process.env.NODE_ENV);
+console.log('Allowed Origins:', allowedOrigins);
+console.log('Frontend URL:', process.env.FRONTEND_URL);
+
 app.post('/stripe',express.raw({type:'application/json'}),stripeWebhooks)
 
 // Middleware
