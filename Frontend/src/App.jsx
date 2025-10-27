@@ -13,6 +13,7 @@ import ProductDetails from './pages/ProductDetails';
 import Cart from './pages/Cart';
 import Address from './pages/Address';
 import MyOrders from './pages/MyOrders';
+import Contact from './pages/Contact';
 import SellerLogin from './components/seller/SellerLogin';
 import SellerLayout from './pages/seller/SellerLayout';
 import AddProduct from './pages/seller/AddProduct';
@@ -35,7 +36,7 @@ const App = () => {
         <Route path='/products/:category/:id' element={<ProductDetails />} />
         <Route path='/cart' element={<Cart />} />
        <Route path="/add-address" element={<Address />} />
-
+        <Route path='/contact' element={<Contact />} />
            <Route path='/my-orders' element={<MyOrders />} />
            <Route path='/loading' element={<Loading/>} />
 
